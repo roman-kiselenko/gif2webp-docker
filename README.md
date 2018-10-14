@@ -4,8 +4,6 @@
 
 `gif2webp` converts a GIF image to a WebP image.
 
-It is the web service to convert images to webp.
-
 ## Run
 
 0. Clone the repository.
