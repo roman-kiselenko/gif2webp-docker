@@ -1,5 +1,14 @@
 # Webp
 
+## Purpose
+
+This project is supposed to be for learning.
+
+* Why docker?
+
+- I dont want to install `webp` related libs to the host machine. Docker is very handy in order to keep environment clean.
+
+
 ## Description
 
 `gif2webp` converts a GIF image to a WebP image.

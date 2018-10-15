@@ -9,8 +9,6 @@ import (
 	"os/exec"
 	"strconv"
 	"strings"
-
-	_ "golang.org/x/image/webp"
 )
 
 func main() {
