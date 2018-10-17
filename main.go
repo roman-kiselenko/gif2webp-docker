@@ -11,6 +11,18 @@ import (
 	"strings"
 )
 
+const (
+	B  uint64 = 1
+	KB uint64 = 1 << (10 * iota)
+	MB
+	GB
+	TB
+	PB
+	EB
+)
+
+const maxSize = 24 * KB
+
 func main() {
 	log.Printf("Start gif2web server on 8080")
 	http.Handle("/convert", gifProcessor())
@@ -19,7 +31,7 @@ func main() {
 
 func gifProcessor() http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		if err := req.ParseMultipartForm((1 << 10) * 24); nil != err {
+		if err := req.ParseMultipartForm(maxSize); nil != err {
 			log.Printf("Error while parse: %s", err)
 			w.WriteHeader(http.StatusInternalServerError)
 			return
